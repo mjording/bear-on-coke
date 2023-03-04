@@ -1,0 +1,63 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+
+      <div class="resources grid">
+        <div class="resource flex-group-center">
+          <label for="data.trope" class="resource-label">Trope</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="data.trope" value="{{data.trope}}" data-dtype="String"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="features">Features</a>
+    <a class="item" data-tab="schoolbag">School Bag</a>
+    <a class="item" data-tab="strengths">Strengths</a>
+    <a class="item" data-tab="trope">Trope Questions</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Owned Features Tab --}}
+    <div class="tab features" data-group="primary" data-tab="features">
+      <section class="grid grid-3col">
+        <section class="main grid-span-2">
+          {{> "systems/bearoncoke/templates/actor/parts/actor-features.html"}}
+          {{> "systems/bearoncoke/templates/actor/parts/actor-adversity.html"}}
+        </section>
+
+        <aside class="sidebar">
+          {{> "systems/bearoncoke/templates/actor/parts/actor-stats.html"}}
+          
+        </aside>
+
+      </section>
+    </div>
+    {{!-- Schoolbag Tab --}}
+    <div class="tab features" data-group="primary" data-tab="schoolbag">
+      {{editor content=data.schoolbag target="data.schoolbag" button=true owner=owner editable=editable}}
+    </div>
+
+    {{!-- Strengths Tab --}}
+    <div class="tab features" data-group="primary" data-tab="strengths">
+      {{editor content=data.strengths target="data.strengths" button=true owner=owner editable=editable}}
+    </div>
+
+    {{!-- Trope Questions Tab --}}
+    <div class="tab features" data-group="primary" data-tab="trope">
+      {{editor content=data.tropequestions target="data.tropequestions" button=true owner=owner editable=editable}}
+    </div>
+  </section>
+</form>
+

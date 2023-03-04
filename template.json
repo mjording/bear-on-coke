@@ -1,0 +1,79 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "base": {
+        "stats": {
+          "fight": {
+            "value": "d4",
+            "stat": 0,
+            "magic": 0
+          },
+          "flight": {
+            "value": "d4",
+            "stat": 0,
+            "magic": 0
+          },
+          "brains": {
+            "value": "d4",
+            "stat": 0,
+            "magic": 0
+          },
+          "brawn": {
+            "value": "d4",
+            "stat": 0,
+            "magic": 0
+          },
+          "charm": {
+            "value": "d4",
+            "stat": 0,
+            "magic": 0
+          },
+          "grit": {
+            "value": "d4",
+            "stat": 0,
+            "magic": 0
+          }
+        },
+        "description": ""
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "trope": "",
+      "age": "",
+      "pronouns": "",
+      "fear": "",
+      "motivation": "",
+      "grade":"",
+      "broom": {
+        "name:": "",
+        "look": "",
+        "mechanicalbenifit": ""
+      },
+      "wand": {
+        "wood": "",
+        "core": ""
+      },
+      "animalfamiliar":"",
+      "schoolbag": "",
+      "adversity": 0,
+      "tropequestions": "",
+      "strengths": ""
+    },
+    "npc": {
+      "templates": ["base"]
+    }
+  },
+  "Item": {
+    "types": ["item"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "item": {
+      "templates": ["base"]
+    }
+  }
+}
